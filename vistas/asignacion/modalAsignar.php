@@ -14,20 +14,9 @@
             <div class="row">
                 <div class="col-sm-6">
                     <label>Nombre de persona</label>
-                    <?php
-                        $sql = "SELECT 
-                                id_persona,
-                                concat(paterno, ' ', materno, ' ', nombre) as nombre
-                            FROM 
-                                t_persona ORDER BY paterno";
-                        $respuesta = mysqli_query($conexion,$sql);
-                    ?>
-                    <select name="idPersona" id="idPersona" class="form-control" required>
-                    <?php while($mostrar = mysqli_fetch_array($respuesta)) { ?>
-                            <option value="<?php echo $mostrar['id_persona'] ?>"> <?php echo $mostrar['nombre'];?> </option>
-                    
+                    <select name="idPersona" id="idPersona" class="form-control" required>                    
                     <option value=""></option>
-                    <?php } ?>
+
                     </select>
                 </div>
                  <div class="col-sm-6">

@@ -69,8 +69,4 @@ function actualizarUsuario(){
     return false;
 }
 
-function asignarEquipo() {
-    console.log('Asignando equipo...');
-    // Resto del código
-}
 
