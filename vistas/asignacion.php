@@ -5,7 +5,7 @@
     if (isset($_SESSION ['usuario']) && $_SESSION['usuario']['rol'] == 2) {
         include "../clases/conexion.php"; 
         $con = new Conexion();
-        $conectar = $con->conectar();
+        $conexion = $con->conectar();
 ?>
 
    
@@ -26,6 +26,9 @@
     <?php  
             include "asignacion/modalAsignar.php";
             include "footer.php"; 
+            ?>
+            <script src="../public/js/asignacion/asignacion.js"></script>
+            <?php
             } else {
                 header("location:../index.html");
             }
