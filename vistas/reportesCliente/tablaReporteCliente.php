@@ -1,0 +1,29 @@
+<table class="table table-sm dt-responsive nowrap" id="tablaReportesDataTable" id style="width:100%">
+    <thead>
+        <th>#</th>
+        <th>Persona</th>
+        <th>Dispositivo</th>
+        <th>Fecha</th>
+        <th>Descripcion</th>
+        <th>Estatus</th>
+        <th>Solucion</th>
+        <th>Eliminar</th>
+    </thead>
+    <tbody>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+
+<script>
+    $(document).ready(function(){
+        $('#tablaReportesClienteDataTable').DataTable();
+    })
+</script>
