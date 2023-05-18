@@ -14,45 +14,43 @@
       <input type="text" id="idUsuario" name="idUsuario" hidden>
             <div class="row">
                     <div class="col-sm-4">
-                        <label for="paternou">Primer Apellido</label>
-                        <input type="text" class="form-control" id="paternou" name="paternou" required>
-                    </div>
-                    <div class="col-sm-4">
-                        <label for="maternou">Segundo Apellido</label>
-                        <input type="text" class="form-control" id="maternou" name="maternou" required>
-                    </div>
-                    <div class="col-sm-4">
-                        <label for="nombreu">Nombre</label>
-                        <input type="text" class="form-control" id="nombreu" name="nombreu" required>
-                    </div>
-            </div>
-            <div class="row">
-                    <div class="col-sm-4">
-                        <label for="fechaNacimientou">Fecha de Nacimiento</label>
-                        <input type="date" class="form-control" id="fechaNacimientou" name="fechaNacimientou">
-                    </div>
-                    <div class="col-sm-4">
-                        <label for="sexou">Sexo</label>
-                        <select class="form-control" id="sexou" name="sexou">
-                            <option value=""></option>
-                            <option value="F">Femenino</option>
-                            <option value="M">Masculino</option>
+                        <label for="tipoDocumentou">Ttipo de Documento</label>
+                        <select name="tipoDocumentou" id="tipoDocumentou" class="form-control" required>
+                            <option value="1">Seleccione una opcion</input>
+                            <option value="1">CC</input>
+                            <option value="2">Pasaporte</option>
                         </select>
                     </div>
                     <div class="col-sm-4">
-                        <label for="telefonou">Telefono: </label>
-                        <input type="text" class="form-control" id="telefonou" name="telefonou">
+                        <label for="numeroDocumentou">Numero de Documento</label>
+                        <input type="text" class="form-control" id="numeroDocumentou" name="numeroDocumentou" required>
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="nombresu">Nombre</label>
+                        <input type="text" class="form-control" id="nombresu" name="nombresu" required>
                     </div>
             </div>
             <div class="row">
                     <div class="col-sm-4">
-                        <label for="correou">Correo</label>
-                        <input type="mail" class="form-control" id="correou" name="correou">
+                        <label for="apellidosu">Apellidos</label>
+                        <input type="tex" class="form-control" id="apellidosu" name="apellidosu">
                     </div>
                     <div class="col-sm-4">
-                        <label for="usuariou">Usuario</label>
-                        <input type="text" class="form-control" id="usuariou" name="usuariou">
+                        <label for="telefonou">Telefono</label>
+                        <input type="text" class="form-control" id="telefonou" name="telefonou">
+                        </select>
                     </div>
+                    <div class="col-sm-4">
+                        <label for="correou">correo: </label>
+                        <input type="text" class="form-control" id="correou" name="correou">
+                    </div>
+            </div>
+            <div class="row">
+            <div class="col-sm-4">
+                        <label for="areau">Area</label>
+                        <input type="text" class="form-control" id="areau" name="areau">
+                    </div>
+
             </div>
             <div class="row">
                 <div class="col-sm-12">
@@ -65,8 +63,8 @@
       </div>
       <div class="row">
             <div class="col-sm-12">
-            <label for="ubicacionu">Ubciacion</label>
-            <textarea name="ubicacionu" id="ubicacionu" class="form-control"></textarea>
+            <label for="oficinau">Oficina</label>
+            <textarea name="oficinau" id="oficinau" class="form-control"></textarea>
             </div>
       </div>
       <div class="modal-footer">

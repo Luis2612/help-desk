@@ -7,14 +7,14 @@
 	usuarios.usuario AS nombreUsuario,
 	roles.nombre AS rol,
     usuarios.id_rol AS idRol,
-	usuarios.ubicacion As ubicacion,
+	persona.apellidos AS apellidos,
     usuarios.activo AS estatus,
     usuarios.id_persona AS idPersona,
-    persona.nombre AS nombrePersona,
-    persona.paterno AS paterno,
-    persona.materno AS materno,
-    persona.fecha_nacimiento AS fechaNacimiento,
-    persona.sexo AS sexo,
+    persona.nombres AS nombres,
+    persona.tipo_documento AS tipoDocumento,
+    persona.numero_documento AS numeroDocumento,
+    persona.oficina AS oficina,
+    persona.area AS area,
     persona.correo AS correo,
     persona.telefono as telefono
  FROM
@@ -28,75 +28,66 @@ $respuesta = mysqli_query($conexion, $sql);
 
 <table class="table table-sm dt-responsive nowrap" id="tablaUsuariosDataTable" style="width:100%">
     <thead>
-            <th>Primer Apellido</th>
-            <th>Segundo Apellido</th>
+        <tr>
+            <th>Tipo de Documento</th>
+            <th>Numero de Documento</th>
             <th>Nombre</th>
-            <th>Edad</th>
+            <th>Apellido</th>
             <th>Telefono</th>
             <th>Correo</th>
-            <th>Usuario</th>
-            <th>Ubicacion</th>
-            <th>Sexo</th>
+            <th>Area</th>
+            <th>Oficina</th>
             <th>Reset Password</th>
             <th>Activar</th>
             <th>Editar</th>
             <th>Eliminar</th>
-
+        </tr>
     </thead>
     <tbody>
-            <?php 
-                while ($mostrar = mysqli_fetch_array($respuesta)) {
-            ?>
-            <tr>
-                <td><?php echo $mostrar['paterno']; ?></td>
-                <td><?php echo $mostrar['materno']; ?></td>
-                <td><?php echo $mostrar['nombrePersona']; ?></td>
-                <td><?php echo $mostrar['fechaNacimiento']; ?></td>
-                <td><?php echo $mostrar['telefono']; ?></td>
-                <td><?php echo $mostrar['correo']; ?></td>
-                <td><?php echo $mostrar['nombreUsuario']; ?></td>
-                <td><?php echo $mostrar['ubicacion']; ?></td>
-                <td><?php echo $mostrar['sexo']; ?></td>
-                <td>
-                    <button class="btn btn-success btn-sm" >
-                        cambiar password
+        <?php while ($mostrar = mysqli_fetch_array($respuesta)) { ?>
+        <tr>
+            <td><?php echo $mostrar['tipoDocumento']; ?></td>
+            <td><?php echo $mostrar['numeroDocumento']; ?></td>
+            <td><?php echo $mostrar['nombres']; ?></td>
+            <td><?php echo $mostrar['apellidos']; ?></td>
+            <td><?php echo $mostrar['telefono']; ?></td>
+            <td><?php echo $mostrar['correo']; ?></td>
+            <td><?php echo $mostrar['area']; ?></td>
+            <td><?php echo $mostrar['oficina']; ?></td>
+            <td>
+                <button class="btn btn-success btn-sm">
+                    cambiar password
+                </button>
+            </td>
+            <td>
+                <?php if ($mostrar['estatus'] == 1) { ?>
+                    <button class="btn btn-info btn-sm">
+                        Activo
                     </button>
-                </td>
-                <td>
-                    <?php if ($mostrar['estatus'] == 1) {
-                    ?>
-                           
-                            <button class="btn btn-info btn-sm">
-                                 Activo
-                            </button>
-                    <?php 
-                        } else {
-                    ?>
-                            <button class="btn btn-info btn-sm">
-                                Inactivo
-                            </button>
-                    <?php
-                                } 
-                    ?>
-                </td>
-                <td>
+                <?php } else { ?>
+                    <button class="btn btn-info btn-sm">
+                        Inactivo
+                    </button>
+                <?php } ?>
+            </td>
+            <td>
                 <button class="btn btn-warning btn-sm" 
                         data-toggle="modal" 
                         data-target="#modalActualizarUsuarios"
                         onclick="obtenerDatosUsuario(<?php echo $mostrar ['idUsuario']?>)">
-                            Editar
+                    Editar
                 </button>
-                </td>
-                <td>
+            </td>
+            <td>
                 <button class="btn btn-danger btn-sm">
-                       Eliminar
-                    </button>
-                </td>
-            </tr>
-            <?php } ?>
+                    Eliminar
+                </button>
+            </td>
+        </tr>
+        <?php } ?>
     </tbody>
-
 </table>
+
 <?php   
             include 'modalActualizar.php';
             

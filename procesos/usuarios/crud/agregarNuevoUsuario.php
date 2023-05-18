@@ -1,17 +1,17 @@
 <?php 
-    $datos = array (
-       "paterno" =>$_POST['paterno'],
-       "materno" =>$_POST['materno'],
-       "nombre" =>$_POST['nombre'],
-       "fechaNacimiento" =>$_POST['fechaNacimiento'],
-       "sexo" =>$_POST['sexo'],
-       "telefono" =>$_POST['telefono'], 
-       "correo" =>$_POST['correo'],
-       "usuario" =>$_POST['usuario'], 
-       "password" =>sha1($_POST['password']),
-       "idRol" =>$_POST['idRol'],
-       "ubicacion" =>$_POST['ubicacion']
-    
+
+   $datos = array (
+
+         "tipoDocumento"=>$_POST['tipoDocumento'],  
+         "numeroDocumento"=>$_POST['numeroDocumento'],  
+         "nombres"=>$_POST['nombres'],
+         "apellidos"=>$_POST['apellidos'],  
+         "telefono"=>$_POST['telefono'],  
+         "correo"=>$_POST['correo'],  
+         "password"=>$_POST['password'],  
+         "idRol"=>$_POST['idRol'],
+         "oficina"=>$_POST['oficina'],
+         "area"=>$_POST['area']
     );
 
     include "../../../clases/Usuarios.php";

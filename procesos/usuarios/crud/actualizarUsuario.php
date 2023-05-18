@@ -1,15 +1,15 @@
 <?php 
     $datos = array(
             'idUsuario'=> $_POST['idUsuario'],
-            'paterno'=> $_POST['paternou'],
-            'materno'=> $_POST['maternou'],
-            'nombre'=> $_POST['nombreu'],
-            'fechaNacimiento'=> $_POST['fechaNacimientou'],
+            'tipoDocumento'=> $_POST['tipoDocumentou'],
+            'numeroDocumento'=> $_POST['numeroDocumentou'],
+            'nombres'=> $_POST['nombresu'],
+            'apellidos'=> $_POST['apellidosu'],
             'telefono'=> $_POST['telefonou'],
             'correo'=> $_POST['correou'],
-            'usuario'=> $_POST['usuariou'],
+            'area'=> $_POST['areau'],
             'idRol'=> $_POST['idRolu'],
-            'ubicacion'=> $_POST['ubicacionu']
+            'oficina'=> $_POST['oficinau']
     
     );
      include "../../../clases/Usuarios.php";

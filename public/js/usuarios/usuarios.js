@@ -10,7 +10,7 @@ function agregarNuevoUsuario(){
         url: "../procesos/usuarios/crud/agregarNuevoUsuario.php",
         success:function(respuesta){
             respuesta = respuesta.trim();
-            if (respuesta == 1) {
+            if (respuesta == 0) {
                 $('#tablaUsuarioLoad').load("usuarios/tablaUsuarios.php");
                 $('#frmAgregarUsuario')[0].reset();
                 Swal.fire(":D" , "Aregado con exito!" , "success");    
@@ -22,7 +22,6 @@ function agregarNuevoUsuario(){
     });
     return false;
 }
-
 function obtenerDatosUsuario(idUsuario){
     $.ajax({
             type: "POST",
@@ -31,16 +30,15 @@ function obtenerDatosUsuario(idUsuario){
             success : function(respuesta){
                 respuesta = jQuery.parseJSON(respuesta);
                 $('#idUsuario').val(respuesta['idUsuario']);
-                $('#paternou').val(respuesta['paterno']);
-                $('#maternou').val(respuesta['materno']);
-                $('#nombreu').val(respuesta['nombrePersona']);
-                $('#fechaNacimientou').val(respuesta['fechaNacimiento']);
-                $('#sexou').val(respuesta['sexo']);
+                $('#tipoDocumento').val(respuesta['tipoDocumento']);
+                $('#numeroDocumentou').val(respuesta['numeroDocumento']);
+                $('#nombresu').val(respuesta['nombres']);
+                $('#apellidosu').val(respuesta['apellidos']);
                 $('#telefonou').val(respuesta['telefono']);
                 $('#correou').val(respuesta['correo']);
-                $('#usuariou').val(respuesta['nombreUsuario']);
+                $('#areau').val(respuesta['area']);
                 $('#idRolu').val(respuesta['idRol']);
-                $('#ubicacionu').val(respuesta['ubicacion']);
+                $('#oficinau').val(respuesta['oficina']);
                 
  
             }
